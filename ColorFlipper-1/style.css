@@ -1,0 +1,45 @@
+main{
+    min-height: calc(100vh - 3rem);
+    display: grid;
+    place-items: center;
+}
+
+h2 {
+    background: #222;
+    color: white;
+    padding: 1rem;
+    border-radius: 10px;
+    margin-bottom: 2.5rem;
+    font-size: 2rem;
+    text-transform: capitalize;
+    font-family: "Roboto", sans-serif;
+    text-align: center;
+    display: block;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+}
+
+.conteiner{
+    text-align: center;
+}
+
+button{
+    font-size: 1rem;
+    padding: 0.75rem 1.25rem;
+    text-transform: uppercase;
+    font-family: "Roboto", sans-serif;
+    background: transparent;
+    color: #222;
+    display: inline-block;
+    font-weight: 700;
+    transition: 0.3s linear;
+    border: 2px solid #222;
+    cursor: pointer;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+}
+
+button:hover{
+    color: white;
+    background: #222;
+}
