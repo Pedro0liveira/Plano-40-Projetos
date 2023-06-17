@@ -1,0 +1,25 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.conteiner{
+    max-width: 60%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+main{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+
+.review{
+    box-sizing: border-box;
+    border: 2px solid rgba(0, 0, 0, 0.4);
+    border-radius: 5px;
+}
