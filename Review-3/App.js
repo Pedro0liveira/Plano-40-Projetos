@@ -18,7 +18,7 @@ const reviews = [
         name: "Clara",
         job: "Arquiteta",
         img: "images/clara.jpg",
-        text: "Clara, uma arquiteta fictícia de 34 anos, é uma mulher apaixonada por design e construção. Com sua expertise em arquitetura e sua visão criativa, ela transforma espaços em ambientes funcionais e esteticamente agradáveis. Clara está sempre em busca das últimas tendências em design e materiais sustentáveis para incorporar em seus projetos. Além de sua dedicação à arquitetura, ela é uma entusiasta da arte e adora explorar galerias e exposições. Sua sensibilidade estética e paixão por beleza refletem-se em suas análises de produtos e serviços relacionados à arquitetura, design de interiores e estilo de vida."
+        text: "Clara, uma arquiteta de 34 anos, é uma mulher apaixonada por design e construção. Com sua expertise em arquitetura e sua visão criativa, ela transforma espaços em ambientes funcionais e esteticamente agradáveis. Clara está sempre em busca das últimas tendências em design e materiais sustentáveis para incorporar em seus projetos. Além de sua dedicação à arquitetura, ela é uma entusiasta da arte e adora explorar galerias e exposições. Sua sensibilidade estética e paixão por beleza refletem-se em suas análises de produtos e serviços relacionados à arquitetura, design de interiores e estilo de vida."
     },
     {
         id: 4,
@@ -30,7 +30,7 @@ const reviews = [
 ]
 
 const img = document.querySelector('#person-img')
-const name = document.querySelector('#person-name')
+const author = document.querySelector('#person-name')
 const job = document.querySelector('#job')
 const info = document.querySelector('#info')
 
@@ -38,11 +38,35 @@ const prevBtn = document.querySelector('.prev')
 const nextBtn = document.querySelector('.next')
 const randomBtn = document.querySelector('.random-btn')
 
-const qtdPeople = 4
+var currentItem = 0
 
-var currentItem = 2
+window.addEventListener('DOMContentLoaded', showPerson(currentItem))
 
-window.addEventListener('DOMContentLoaded', function () {
+nextBtn.addEventListener('click', function(){
+    currentItem++
+    if (currentItem > reviews.length - 1) {
+        currentItem = 0
+    }
+    showPerson()
+})
+
+prevBtn.addEventListener('click', function(){
+    currentItem--
+    if (currentItem < 0) {
+        currentItem = reviews.length - 1
+    }
+    showPerson()
+})
+
+randomBtn.addEventListener('click', function(){
+    currentItem = Math.floor(Math.random() * reviews.length)
+    showPerson()
+})
+
+function showPerson(){
     const Item = reviews[currentItem]
     img.src = Item.img
-})
+    author.innerHTML = Item.name
+    job.innerHTML = Item.job
+    info.innerHTML = Item.text
+}
